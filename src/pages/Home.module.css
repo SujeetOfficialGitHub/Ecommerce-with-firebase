@@ -1,0 +1,13 @@
+.tour-list{
+    display: grid;
+    margin: 2rem auto;
+    justify-content: center;
+}
+.tour-list tr{
+    border-bottom: 1px solid black;
+}
+.tour-list tr td{
+    padding: 1rem 2rem;
+    
+}
+

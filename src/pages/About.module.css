@@ -1,0 +1,21 @@
+.about{
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 22px;
+}
+
+.about img{
+    float: left;
+    margin: 20px 50px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+.about p{
+    width: 100%;
+    text-align: justify;
+    font-size: 17px;
+    margin: 20px;
+    color: #777;
+}
+

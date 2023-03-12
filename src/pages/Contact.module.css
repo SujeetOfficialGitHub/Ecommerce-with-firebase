@@ -1,0 +1,39 @@
+.contact-form{
+    display: grid;
+    margin: 2rem auto;
+    justify-content: center;
+    padding: 2rem;
+    border: 1px solid black;
+    width: 40rem;
+    border-radius: 1rem;
+}
+.contact-form h2{
+    font-size: 2rem;
+    text-align: center;
+}
+.input-box{
+    font-size: 1.3rem;
+    margin: 1rem 0rem;
+}
+.input-box input{
+    width: 35rem;
+    font-size: 1.3rem;
+    padding: .3rem 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.submit-btn{
+    display: flex;
+    justify-content: center;
+}
+.submit-btn input{
+    font-size: 1.4rem;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 0rem 2rem;
+}
+.submit-btn input:hover{
+    background: blue;
+    color: white;
+    cursor: pointer;
+}
