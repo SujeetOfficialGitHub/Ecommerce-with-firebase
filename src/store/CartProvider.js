@@ -3,6 +3,8 @@ import React, {useState, useEffect, useContext} from 'react'
 import AuthContext from './auth-context';
 import CartContext from "./cart-context";
 
+export const BASE_URL = 'https://crudcrud.com/api/28b7dfa73666459f8ac05b9f86d44d2b';
+
 const CartProvider = (props) => {
     const [cartData, setCartData] = useState([]);
     const authCtx = useContext(AuthContext)
@@ -10,7 +12,7 @@ const CartProvider = (props) => {
     useEffect(() => {
         const getData = async() => {
             try{
-                const {data} = await axios.get(`https://crudcrud.com/api/28b7dfa73666459f8ac05b9f86d44d2b/${authCtx.email}/`)
+                const {data} = await axios.get(`${BASE_URL}/${authCtx.email}/`)
                 setCartData(data)
             }catch(error){
                 console.log(error)
@@ -28,7 +30,7 @@ const CartProvider = (props) => {
                 qty: existingCartItem[0].qty + item.qty
             }
             try{
-                await axios.put(`https://crudcrud.com/api/28b7dfa73666459f8ac05b9f86d44d2b/${authCtx.email}/${existingCartItem[0]._id}`, updateExistingCartItem);
+                await axios.put(`${BASE_URL}/${authCtx.email}/${existingCartItem[0]._id}`, updateExistingCartItem);
 
                 const updateExistingCartItemAfterPut = cartData.map((cartItem) => {
                     if (cartItem.id === updateExistingCartItem.id){
@@ -46,7 +48,7 @@ const CartProvider = (props) => {
             }
         }else{
             try{
-                const res = await axios.post(`https://crudcrud.com/api/28b7dfa73666459f8ac05b9f86d44d2b/${authCtx.email}/`,item)
+                const res = await axios.post(`${BASE_URL}/${authCtx.email}/`,item)
                 setCartData([...cartData, res.data])
             }catch(error){
                 console.log(error)
@@ -60,7 +62,7 @@ const CartProvider = (props) => {
         if (existingCartItem.length > 0){
             const cartItem = existingCartItem[0]
             try{
-                await axios.delete(`https://crudcrud.com/api/28b7dfa73666459f8ac05b9f86d44d2b/${authCtx.email}/${cartItem._id}`);
+                await axios.delete(`${BASE_URL}/${authCtx.email}/${cartItem._id}`);
     
                 const updatedItems = cartData.filter((cartItem) => cartItem.id !== id)
                 setCartData(updatedItems)

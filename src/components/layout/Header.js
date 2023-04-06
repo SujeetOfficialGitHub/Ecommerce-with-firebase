@@ -34,13 +34,14 @@ import AuthContext from '../../store/auth-context';
               >
                 Logout
               </Button>}
-            <Button 
+            {authCtx.isLoggedIn && <Button 
               className="btn-sm h-25 m-2 d-flex" 
               variant='secondary' 
               onClick={() => props.onShowCart(true)}
             >
               Cart <span className='ml-1'>{cartCtx.items && cartCtx.items.length}</span>
-            </Button>
+            </Button>}
+            
           </Nav>
         </Container>
     </Navbar>
